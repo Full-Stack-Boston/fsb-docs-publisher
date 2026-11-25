@@ -1,12 +1,14 @@
-name: Deploy Bonaloop docs (Pages)
+name: Deploy docs (Pages)
+
 on:
   push:
     branches: [main]
     paths:
-      - 'products/bonaloop/**'
+      - 'products/**'
       - 'package.json'
       - 'package-lock.json'
-      - '.github/workflows/deploy-bonaloop-pages.yml'
+      - 'scripts/**'
+      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -15,7 +17,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-bonaloop
+  group: pages-docs
   cancel-in-progress: true
 
 jobs:
@@ -28,10 +30,10 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - run: npm run docs:bonaloop:build
+      - run: npm run build:all
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/bonaloop
+          path: dist
 
   deploy:
     needs: build

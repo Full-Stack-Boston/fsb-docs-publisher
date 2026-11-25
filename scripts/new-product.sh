@@ -15,18 +15,27 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: '${TITLE} Docs',
   description: 'Public product documentation for ${TITLE}',
-  base: '/',
+  base: '/${SLUG}/',
   cleanUrls: true,
   outDir: '../../dist/${SLUG}',
   themeConfig: {
-    nav: [{ text: 'Home', link: '/' }],
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'All docs', link: 'https://docs.fullstackboston.com/' },
+    ],
     sidebar: [{ text: '${TITLE}', items: [{ text: 'Overview', link: '/' }] }],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/Full-Stack-Boston/fsb-docs-publisher' },
+    ],
   },
 })
 CFG
 cat > "$DEST/index.md" <<MD
 # ${TITLE}
 
-Public docs stub. Private ops stay on Wiki \`Products/${TITLE}/\`.
+Public docs stub for **${TITLE}** (score \`1\`).
+
+- Canonical path: \`https://docs.fullstackboston.com/${SLUG}/\`
+- Private ops (if any) stay on Wiki under \`Products/\` (Authentik)
 MD
-echo "scaffolded $DEST"
+echo "scaffolded $DEST — add a row to products/umbrella/index.md and npm run build:all"

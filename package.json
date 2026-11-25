@@ -4,10 +4,11 @@
   "type": "module",
   "description": "Shared VitePress + GitHub Pages publisher for Full Stack Boston product docs (IDEA-30)",
   "scripts": {
+    "docs:umbrella:build": "vitepress build products/umbrella",
     "docs:bonaloop:dev": "vitepress dev products/bonaloop",
     "docs:bonaloop:build": "vitepress build products/bonaloop",
     "docs:bonaloop:preview": "vitepress preview products/bonaloop",
-    "build:all": "npm run docs:bonaloop:build"
+    "build:all": "node scripts/build-all.mjs"
   },
   "devDependencies": {
     "vitepress": "^1.6.3"
