@@ -1,21 +1,38 @@
 # Full Stack Boston docs
 
-Public product documentation (score `1`). Private ops live on [Wiki](https://wiki.fullstackboston.com) (Authentik).
+One host: [docs.fullstackboston.com](https://docs.fullstackboston.com).
 
-## Products
+- **Public (score `1`)** — VitePress pages on this site
+- **Private (score `0`)** — same path style, redirects to Authentik Wiki
 
-| Product | Docs |
+## Public
+
+| Product | Path |
 |---------|------|
-| Bonaloop | [bonaloop](https://docs.fullstackboston.com/bonaloop/) |
-| Parker Fund (vanilla) | [parker-fund-vanilla](https://docs.fullstackboston.com/parker-fund-vanilla/) |
-| Portfolio Website | [portfolio-website](https://docs.fullstackboston.com/portfolio-website/) |
-| Sprucer | [sprucer](https://docs.fullstackboston.com/sprucer/) |
-| AMS | [ams](https://docs.fullstackboston.com/ams/) |
-| Mail Janitor | [mail-janitor](https://docs.fullstackboston.com/mail-janitor/) |
-| Components USA | [components-usa](https://docs.fullstackboston.com/components-usa/) |
-| FSB Vanilla | [fsb-vanilla](https://docs.fullstackboston.com/fsb-vanilla/) |
-| FSB Splash | [fsb-splash](https://docs.fullstackboston.com/fsb-splash/) |
-| Yankee Swap | [yankeeswap](https://docs.fullstackboston.com/yankeeswap/) |
-| Secret Santa | [secret-santa](https://docs.fullstackboston.com/secret-santa/) |
+| Bonaloop | [/bonaloop/](/bonaloop/) |
+| Parker Fund (vanilla) | [/parker-fund-vanilla/](/parker-fund-vanilla/) |
+| Portfolio Website | [/portfolio-website/](/portfolio-website/) |
+| Sprucer | [/sprucer/](/sprucer/) |
+| AMS | [/ams/](/ams/) |
+| Mail Janitor | [/mail-janitor/](/mail-janitor/) |
+| Components USA | [/components-usa/](/components-usa/) |
+| FSB Vanilla | [/fsb-vanilla/](/fsb-vanilla/) |
+| FSB Splash | [/fsb-splash/](/fsb-splash/) |
+| Yankee Swap | [/yankeeswap/](/yankeeswap/) |
+| Secret Santa | [/secret-santa/](/secret-santa/) |
 
-Brand host aliases resolve to this Pages site; use the paths above as canonical URLs.
+## Private (Wiki)
+
+| Product | Path |
+|---------|------|
+| Nathan | [/nathan/](/nathan/) |
+| FSB | [/fsb/](/fsb/) |
+| FSB CLI | [/fsb-cli/](/fsb-cli/) |
+| Gamespotter | [/gamespotter/](/gamespotter/) |
+| Folio | [/folio/](/folio/) |
+| Ficha | [/ficha/](/ficha/) |
+| Rustdesk | [/rustdesk/](/rustdesk/) |
+| Vaultwarden | [/vaultwarden/](/vaultwarden/) |
+| Parker Fund | [/parker-fund/](/parker-fund/) |
+
+Optional brand shortcut: `docs.bonaloop.com` still 302s to `/bonaloop/`.

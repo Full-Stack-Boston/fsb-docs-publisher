@@ -41,4 +41,40 @@ for (const ent of readdirSync(umbrella, { withFileTypes: true })) {
 rmSync(umbrella, { recursive: true, force: true })
 
 writeFileSync(join(dist, 'CNAME'), 'docs.fullstackboston.com\n')
-console.log('merged site -> dist/ (CNAME docs.fullstackboston.com)')
+
+// Score-0 paths on the same host: static redirects to Wiki (Pages is DNS-only, so CF path rules cannot help).
+const privateWiki = {
+  nathan: 'Nathan',
+  fsb: 'FSB',
+  'fsb-cli': 'FSB-CLI',
+  gamespotter: 'Gamespotter',
+  folio: 'Folio',
+  ficha: 'Ficha',
+  rustdesk: 'Rustdesk',
+  vaultwarden: 'Vaultwarden',
+  'parker-fund': 'Parker-Fund',
+}
+for (const [slug, wikiPath] of Object.entries(privateWiki)) {
+  const target = `https://wiki.fullstackboston.com/en/Products/${wikiPath}`
+  const dir = join(dist, slug)
+  mkdirSync(dir, { recursive: true })
+  writeFileSync(
+    join(dir, 'index.html'),
+    `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0;url=${target}">
+  <link rel="canonical" href="${target}">
+  <title>Redirecting to Wiki</title>
+  <script>location.replace(${JSON.stringify(target)})</script>
+</head>
+<body>
+  <p>Private docs — <a href="${target}">open Wiki ${wikiPath}</a> (Authentik).</p>
+</body>
+</html>
+`,
+  )
+}
+
+console.log('merged site -> dist/ (CNAME docs.fullstackboston.com + private wiki redirects)')

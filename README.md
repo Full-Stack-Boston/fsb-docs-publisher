@@ -2,15 +2,17 @@
 
 Shared **VitePress** docs publisher for FSB product docs ([IDEA-30](https://plane.fullstackboston.com/fsb/browse/IDEA-30)).
 
-- **Private ops (score `0`)** stay on Wiki.js (`Products/<Name>/`, Authentik). Host aliases `docs.*` redirect to Wiki.
-- **Public (score `1`)** build here and publish to **GitHub Pages** at [docs.fullstackboston.com](https://docs.fullstackboston.com).
+Canonical host: **[docs.fullstackboston.com](https://docs.fullstackboston.com)**
+
+- **Public (score `1`)** — VitePress under `/<slug>/`
+- **Private (score `0`)** — same path style; build emits HTML redirects to Wiki `Products/<Name>/` (Authentik)
 
 ## Local
 
 ```bash
 npm ci
 npm run build:all
-npm run docs:bonaloop:dev   # example product
+npm run docs:bonaloop:dev
 ```
 
 ## Add a public product
@@ -24,4 +26,3 @@ bash scripts/new-product.sh <slug>
 
 - No secret values in markdown.
 - Score `-1` products are not added.
-- Score `0` products use Wiki only (DNS → Wiki redirect).
