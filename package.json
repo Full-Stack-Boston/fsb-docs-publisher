@@ -1,0 +1,18 @@
+{
+  "name": "fsb-docs-publisher",
+  "private": true,
+  "type": "module",
+  "description": "Shared VitePress + GitHub Pages publisher for Full Stack Boston product docs (IDEA-30)",
+  "scripts": {
+    "docs:bonaloop:dev": "vitepress dev products/bonaloop",
+    "docs:bonaloop:build": "vitepress build products/bonaloop",
+    "docs:bonaloop:preview": "vitepress preview products/bonaloop",
+    "build:all": "npm run docs:bonaloop:build"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
